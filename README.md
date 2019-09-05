@@ -1,9 +1,9 @@
 # Energy
 Energy Consumption in Homes
-# Project Name Here
+# Project: E-CUBES
 
 # Link to project proposal
-link to wiki page here
+https://github.com/deco3500-2019/energy/wiki/Project-Proposal
 
 # Link to final report
 link to final wiki report 
