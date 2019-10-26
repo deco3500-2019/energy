@@ -26,7 +26,7 @@ Email: kokakola99sze@gmail.com
 Password: kobesze99
 File: IncrementedFullStrip
 
-## Adobe XD Application:**
+## Adobe XD Application:
 
 To create an experience for the user, the application was made through Adobe XD, with minimalistic design and simple functions. 
 
