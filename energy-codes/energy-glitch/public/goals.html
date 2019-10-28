@@ -1,0 +1,198 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Energy </title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://cdn.glitch.com/e1cfed3c-e7d2-43b6-b09b-72390f16c288%2FCapture.PNG?v=1570784291467" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <title>JavaScript Bar Chart</title>
+    <script src="https://fonts.googleapis.com/css?family=Lato:700">></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js">></script>
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+ 
+    <header>
+      <h1>
+        Goals
+      </h1>
+    </header>
+       
+   
+    <br>
+ <msg1> Total Consumption </msg1>
+    <hr>
+    
+   <msg3><a href="/setgoals.html">Set Goals</a></msg3>
+    
+
+ <!-- var queryString = decodeURIComponent(window.location.search);
+queryString = queryString.substring(3);
+var queries = queryString;
+  <!-- var queryString = decodeURIComponent(window.location.search);
+queryString = queryString.substring(1);
+var queries = queryString.split("&");
+for (var i = 0; i < queries.length; i++)
+{
+  document.write(queries[i] + "<br>");
+}-->
+  
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300,400" rel="stylesheet">
+
+
+<div class="chart-total" style="max-width: 256px;">
+  <canvas height="256" width="256"></canvas>
+  <div class="chart-total-legend">
+    <span class="legend-val" style="font-size: 64px;">
+      <script>
+
+ var queryString = decodeURIComponent(window.location.search);
+queryString = queryString.substring(3);
+var queries = queryString.split("&n=");
+    
+for (var i = 0; i < queries.length; i++)
+{
+  var n=parseInt(queries[0],0);
+  var m=parseInt(queries[1],0);
+  var p=parseInt(queries[2],0);
+  var q=((n+m+p)/300)*100;
+ 
+ 
+}
+document.write(q.toFixed(0));
+
+ 
+ 
+</script>% 
+    </span>
+    
+  </div>
+</div>
+
+    <script>
+    //input
+var dimens = 256;
+var color = "rgba(54, 162, 235, 0.9)";
+var padding = 12;
+var width = 10;
+var value = 80;
+var maxValue = 100;
+var countFontRatio = 0.25; //ratio in relation to the dimens value
+
+$(function() {
+  $(".chart-total").each(function(idx, element) {
+
+    var _render = function() {
+
+      var startingPoint = -0.5;
+      var pointValue = startingPoint;
+      var currentPoint = startingPoint;
+      var timer;
+      var _ctx;
+
+      var $canvas = $(element).find("canvas");
+      var canvas = $canvas.get(0);
+
+      pointValue = (value / (maxValue / 20) * 0.1) - 0.5;
+
+      canvas.height = dimens;
+      canvas.width = dimens;
+
+      if (!countFontRatio)
+        $canvas.parent().find(".legend-val").css("font-size", dimens / value.toString().length);
+      else
+        $canvas.parent().find(".legend-val").css("font-size", dimens * countFontRatio);
+
+      _ctx = canvas.getContext("2d");
+
+
+
+      var _draw = function() {
+
+        _ctx.clearRect(0, 0, dimens, dimens);
+        _ctx.beginPath();
+        _ctx.arc(dimens / 2, dimens / 2, (dimens / 2) - padding, startingPoint * Math.PI, 1.5 * Math.PI);
+        _ctx.strokeStyle = "#ddd";
+        _ctx.lineWidth = 2;
+        _ctx.lineCap = "square";
+        _ctx.stroke();
+
+        _ctx.beginPath();
+        _ctx.arc(dimens / 2, dimens / 2, (dimens / 2) - padding, startingPoint * Math.PI, currentPoint * Math.PI);
+        _ctx.strokeStyle = color;
+        _ctx.lineWidth = width;
+        _ctx.lineCap = "round";
+        _ctx.stroke();
+
+        currentPoint += 0.1;
+
+        if (currentPoint > pointValue) {
+          clearInterval(timer)
+        }
+
+      };
+
+      timer = setInterval(_draw, 100);
+    };
+
+    _render();
+
+    $(window).resize(function() {
+      _render();
+    });
+
+  });
+})
+    </script>
+    
+    
+   <div class="container">
+     
+ 
+
+ <div class="bottnav">
+        
+   <a href="index.html"><img src="https://cdn.glitch.com/e1cfed3c-e7d2-43b6-b09b-72390f16c288%2Fhome.PNG?v=1570808832301" alt="" height="42" width="42">  </a>
+       
+  <a class="active" href="goals.html"><img src="https://cdn.glitch.com/e1cfed3c-e7d2-43b6-b09b-72390f16c288%2Ftips.PNG?v=1570808840702" alt="" height="45" width="42"> </a>
+  <a href="#W"><img src="https://cdn.glitch.com/e1cfed3c-e7d2-43b6-b09b-72390f16c288%2Fmore.PNG?v=1570808856790" alt="" height="44" width="42"> </a>
+  <a href="#T"><img src="https://cdn.glitch.com/e1cfed3c-e7d2-43b6-b09b-72390f16c288%2Ftotal.PNG?v=1570808870312" alt="" height="44" width="42"> </a>
+        
+</div>
+          </div>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>
