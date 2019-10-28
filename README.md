@@ -38,4 +38,5 @@ As Adobe XD does not support the 'set goals' function, this was done on another 
 https://achieved-erigeron.glitch.me 
 
 # Link to Promotional material:
+https://github.com/deco3500-2019/energy/wiki/Design-Process-Overview#promotional-material
 
