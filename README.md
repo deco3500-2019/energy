@@ -22,8 +22,6 @@ https://create.arduino.cc/editor/ksze99/10db10ce-6a73-4452-82e1-3a9f1c95cb35/pre
 
 If link does not work, login credentials are as below:
 
-Email: kokakola99sze@gmail.com
-Password: kobesze99
 File: IncrementedFullStrip
 
 ## Adobe XD Application:
